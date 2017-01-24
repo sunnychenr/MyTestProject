@@ -17,6 +17,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    // 主界面测试
     private CardView cv;
 
     private RecyclerView rv;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_add:
-                adapter.addData(1);
+                adapter.addData(0);
                 break;
             case R.id.btn_delete:
                 adapter.deleteData(1);

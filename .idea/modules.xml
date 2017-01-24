@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EventBusTest/EventBusTest.iml" filepath="$PROJECT_DIR$/EventBusTest/EventBusTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MvpTest/MvpTest.iml" filepath="$PROJECT_DIR$/MvpTest/MvpTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyTestProject.iml" filepath="$PROJECT_DIR$/MyTestProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewTest/RecyclerViewTest.iml" filepath="$PROJECT_DIR$/RecyclerViewTest/RecyclerViewTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CardViewTest/cardviewtest.iml" filepath="$PROJECT_DIR$/CardViewTest/cardviewtest.iml" />
     </modules>
   </component>
 </project>
