@@ -1,1 +1,1 @@
-include ':RecyclerViewTest', ':EventBusTest', ':CardViewTest', ':cardviewtest', ':MvpTest'
+include ':RecyclerViewTest', ':EventBusTest', ':CardViewTest', ':cardviewtest', ':MvpTest', ':FontIconView'

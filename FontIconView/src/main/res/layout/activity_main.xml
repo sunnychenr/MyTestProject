@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lionmobi.fonticonview.view.FontIconView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#ff3b3b"
+        android:text="@string/icon_call"/>
+
+    <com.lionmobi.fonticonview.view.IconView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="#00862f"
+        android:text="@string/icon_2"/>
+</LinearLayout>

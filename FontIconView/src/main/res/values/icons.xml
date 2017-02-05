@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="icon_call" translatable="false">\uE924</string>
+    <string name="icon_1" translatable="false">\ue901</string>
+    <string name="icon_2" translatable="false">\ue922</string>
+
+</resources>
