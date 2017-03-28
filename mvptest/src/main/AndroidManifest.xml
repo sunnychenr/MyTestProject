@@ -3,19 +3,25 @@
     package="com.lionmobi.mvptest">
 
     <application
-        android:name="com.lionmobi.application.ApplicationEx"
+        android:name=".application.ApplicationEx"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lionmobi.activity.MainActivity">
+        <activity android:name="com.lionmobi.mvptest.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".receiver.AlarmReceiver">
+            <intent-filter>
+                <action android:name="com.android.intent.action.AlarmReceiver"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
