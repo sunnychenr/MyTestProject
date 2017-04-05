@@ -3,10 +3,8 @@ package com.lionmobi.mvptest.presenter;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
-import android.view.View;
 
 import com.lionmobi.mvptest.R;
-import com.lionmobi.mvptest.activity.MainActivity;
 import com.lionmobi.mvptest.mode_interface.IModel;
 import com.lionmobi.mvptest.mode_interface.IPresenter;
 import com.lionmobi.mvptest.mode_interface.IView;
@@ -14,6 +12,8 @@ import com.lionmobi.mvptest.model.ModelImpl;
 
 /**
  * Created by ChenR on 2017/4/5.
+ *
+ * mvp 中间层实现;(IPresenter)
  */
 
 public class PresenterImpl implements IPresenter{
@@ -23,10 +23,10 @@ public class PresenterImpl implements IPresenter{
     private IView mIView;
     private IModel mIModel;
 
-    public PresenterImpl (MainActivity act, Handler handler) {
+    public PresenterImpl (Context context, IView iView, Handler handler) {
         this.mHandler = handler;
-        this.mContext = act;
-        this.mIView = act;
+        this.mContext = context;
+        this.mIView = iView;
     }
 
     @Override

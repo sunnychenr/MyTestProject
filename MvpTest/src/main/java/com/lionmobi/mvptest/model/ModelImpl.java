@@ -4,6 +4,8 @@ import com.lionmobi.mvptest.mode_interface.IModel;
 
 /**
  * Created by ChenR on 2017/4/5.
+ *
+ * mvp 数据实现;(IModel)
  */
 
 public class ModelImpl implements IModel {

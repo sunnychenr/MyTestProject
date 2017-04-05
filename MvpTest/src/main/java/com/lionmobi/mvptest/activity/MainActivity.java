@@ -13,6 +13,12 @@ import com.lionmobi.mvptest.mode_interface.IPresenter;
 import com.lionmobi.mvptest.mode_interface.IView;
 import com.lionmobi.mvptest.presenter.PresenterImpl;
 
+/**
+ *
+ * mvp 视图实现;(IView)
+ *
+ * */
+
 public class MainActivity extends AppCompatActivity implements IView {
     private IPresenter mIPresenter;
     private TextView tv_1;
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements IView {
             }
         });*/
 
-        mIPresenter = new PresenterImpl(MainActivity.this, mHandler);
+        mIPresenter = new PresenterImpl(MainActivity.this, MainActivity.this, mHandler);
         mIPresenter.onCreate();
     }
 

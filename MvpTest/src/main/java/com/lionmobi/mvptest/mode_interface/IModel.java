@@ -2,6 +2,8 @@ package com.lionmobi.mvptest.mode_interface;
 
 /**
  * Created by ChenR on 2017/4/5.
+ *
+ * mvp 数据接口;
  */
 
 public interface IModel {
