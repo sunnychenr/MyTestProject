@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/MvpTest/MvpTest.iml" filepath="$PROJECT_DIR$/MvpTest/MvpTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyTestProject.iml" filepath="$PROJECT_DIR$/MyTestProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerViewTest/RecyclerViewTest.iml" filepath="$PROJECT_DIR$/RecyclerViewTest/RecyclerViewTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RxJavaTest/RxJavaTest.iml" filepath="$PROJECT_DIR$/RxJavaTest/RxJavaTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/CardViewTest/cardviewtest.iml" filepath="$PROJECT_DIR$/CardViewTest/cardviewtest.iml" />
     </modules>
   </component>

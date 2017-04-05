@@ -19,7 +19,7 @@ public class Utils {
         Toast.makeText(context, content, Toast.LENGTH_SHORT).show();
     }
 
-    public static void d (String log) {
+    public static void logD(String log) {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, log);
         }
