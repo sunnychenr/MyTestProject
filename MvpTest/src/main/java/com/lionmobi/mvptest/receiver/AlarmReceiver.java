@@ -14,7 +14,7 @@ import com.lionmobi.mvptest.utils.MessageNotifyUtil;
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        MessageNotifyUtil.log("action ---> " + intent.getAction());
-        Toast.makeText(context, "有一个闹钟", Toast.LENGTH_SHORT).show();
+        MessageNotifyUtil.logD("action ---> " + intent.getAction());
+        MessageNotifyUtil.toast("有一个闹钟");
     }
 }

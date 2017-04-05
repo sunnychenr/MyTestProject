@@ -9,6 +9,7 @@ import com.lionmobi.mvptest.mode_interface.IModel;
 import com.lionmobi.mvptest.mode_interface.IPresenter;
 import com.lionmobi.mvptest.mode_interface.IView;
 import com.lionmobi.mvptest.model.ModelImpl;
+import com.lionmobi.mvptest.utils.MessageNotifyUtil;
 
 /**
  * Created by ChenR on 2017/4/5.
@@ -23,6 +24,8 @@ public class PresenterImpl implements IPresenter{
     private IView mIView;
     private IModel mIModel;
 
+    private Thread loadData;
+
     public PresenterImpl (Context context, IView iView, Handler handler) {
         this.mHandler = handler;
         this.mContext = context;
@@ -36,27 +39,40 @@ public class PresenterImpl implements IPresenter{
 
     @Override
     public void onDestory() {
-
+        mHandler = null;
+        mContext = null;
+        mIModel = null;
+        mIView = null;
     }
 
     @Override
     public void onElementsClick(int viewId) {
         if (viewId == R.id.btn) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    mIModel.getData(new IModel.ICallBack() {
-                        @Override
-                        public void onCall(String data) {
-                            mIView.setElemetsData(data);
+            if (loadData == null || !loadData.isAlive()) {
+                loadData = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
 
-                            Message msg = mHandler.obtainMessage(1);
-                            msg.obj = data + ", handler send msg";
-                            mHandler.sendMessage(msg);
+                        try {
+                            Thread.currentThread().sleep(2000);
+                        } catch (Exception e) {
+                            MessageNotifyUtil.logE("PresenterImpl IModel getData exception: " + e.getMessage());
                         }
-                    });
-                }
-            }).start();
+
+                        mIModel.getData(new IModel.ICallBack() {
+                            @Override
+                            public void onCall(String data) {
+                                mIView.setElemetsData(data);
+
+                                Message msg = mHandler.obtainMessage(1);
+                                msg.obj = data + ", handler send msg";
+                                mHandler.sendMessageDelayed(msg, 1000);
+                            }
+                        });
+                    }
+                });
+                loadData.start();
+            }
         }
     }
 }

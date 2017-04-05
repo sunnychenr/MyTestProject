@@ -14,9 +14,15 @@ public class MessageNotifyUtil {
 
     private static final String TAG = "chenr";
 
-    public static void log (String msg) {
+    public static void logD (String msg) {
         if (BuildConfig.DEBUG) {
             Log.d(TAG, msg);
+        }
+    }
+
+    public static void logE (String msg) {
+        if (BuildConfig.DEBUG) {
+            Log.e(TAG, msg);
         }
     }
 

@@ -59,10 +59,19 @@ public class MainActivity extends AppCompatActivity implements IView {
         mIPresenter.onCreate();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mIPresenter.onDestory();
+        mIPresenter = null;
+    }
+
     private void initListener() {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tv_1.setText("");
+                tv_2.setText("");
                 if (mIPresenter != null) {
                     mIPresenter.onElementsClick(v.getId());
                 }
