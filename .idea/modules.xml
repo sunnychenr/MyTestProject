@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CanvasElevation/CanvasElevation.iml" filepath="$PROJECT_DIR$/CanvasElevation/CanvasElevation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CardViewTest/CardViewTest.iml" filepath="$PROJECT_DIR$/CardViewTest/CardViewTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/CustomButton/CustomButton.iml" filepath="$PROJECT_DIR$/CustomButton/CustomButton.iml" />
       <module fileurl="file://$PROJECT_DIR$/EventBusTest/EventBusTest.iml" filepath="$PROJECT_DIR$/EventBusTest/EventBusTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/FontIconView/FontIconView.iml" filepath="$PROJECT_DIR$/FontIconView/FontIconView.iml" />
