@@ -10,6 +10,7 @@ import java.util.Observer;
 public class ObserverImpl implements Observer {
     @Override
     public void update(Observable o, Object arg) {
-
+        ObservableImpl observable = (ObservableImpl) o;
+        System.out.println(observable.getStrData());
     }
 }

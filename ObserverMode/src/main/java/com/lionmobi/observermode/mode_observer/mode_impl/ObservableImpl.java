@@ -7,6 +7,17 @@ import java.util.Observable;
  */
 
 public class ObservableImpl extends Observable {
+    private String strData = "";
 
+    public void setData (String data) {
+        if (!strData.equals(data)) {
+            strData = data;
+            setChanged();
+            notifyObservers();
+        }
+    }
 
+    public String getStrData() {
+        return strData;
+    }
 }

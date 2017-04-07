@@ -6,5 +6,4 @@ package com.lionmobi.eventbustest.mode_interface;
 
 public interface IModel {
     public void getData(ICallBack callback);
-
 }
