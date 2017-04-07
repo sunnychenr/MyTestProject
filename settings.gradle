@@ -1,1 +1,1 @@
-include ':RecyclerViewTest', ':MvpTest', ':FontIconView', ':CanvasElevation', ':CustomButton', ':RxJavaTest', ':EventBusTest'
+include ':RecyclerViewTest', ':MvpTest', ':FontIconView', ':CanvasElevation', ':CustomButton', ':RxJavaTest', ':EventBusTest', ':ObserverMode'
