@@ -31,12 +31,37 @@ public class PresenterImpl implements IPresenter {
 
     @Override
     public void onCreate() {
-        Log.d("chenr", "没有操作嚯... ...");
+        Log.d("chenr", "onCreate, 没有操作嚯... ...");
+    }
+
+    @Override
+    public void onStart() {
+        Log.d("chenr", "onStart");
+    }
+
+    @Override
+    public void onRestart() {
+        Log.d("chenr", "onRestart");
+    }
+
+    @Override
+    public void onResume() {
+        Log.d("chenr", "onResume");
+    }
+
+    @Override
+    public void onStop() {
+        Log.d("chenr", "onStop");
+    }
+
+    @Override
+    public void onPause() {
+        Log.d("chenr", "onPause");
     }
 
     @Override
     public void onDestory() {
-        Log.d("chenr", "还是没有操作嚯... ...");
+        Log.d("chenr", "onDestory, 还是没有操作嚯... ...");
     }
 
     @Override
@@ -51,6 +76,11 @@ public class PresenterImpl implements IPresenter {
                             public void onCall(String msg) {
                                 mIView.setElementData(msg);
 
+                                try {
+                                    Thread.currentThread().sleep(1500);
+                                } catch (Exception e) {
+                                    Log.e("chenr", "InterceptException: " + e.getMessage());
+                                }
                                 EventBusData data = new EventBusData();
                                 data.setData(msg);
                                 EventBus.getDefault().post(data);

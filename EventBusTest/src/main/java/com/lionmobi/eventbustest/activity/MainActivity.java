@@ -2,6 +2,7 @@ package com.lionmobi.eventbustest.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -46,6 +47,18 @@ public class MainActivity extends Activity implements IView{
                 mPresenter.onItemClick(R.id.btn);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mPresenter.onPause();
     }
 
     @Override
