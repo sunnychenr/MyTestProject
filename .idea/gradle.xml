@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CallRingFloatWindow" />
             <option value="$PROJECT_DIR$/CanvasElevation" />
             <option value="$PROJECT_DIR$/CustomButton" />
             <option value="$PROJECT_DIR$/EventBusTest" />
