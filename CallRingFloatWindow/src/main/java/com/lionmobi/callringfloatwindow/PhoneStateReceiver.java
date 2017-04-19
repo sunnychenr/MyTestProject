@@ -29,9 +29,9 @@ public class PhoneStateReceiver extends BroadcastReceiver {
             curState = mTele.getCallState();
             Log.d("chenr", "Call State: " + curState);
             if (TelephonyManager.CALL_STATE_RINGING == curState) {
-                if (mWindow == null) {
+//                if (mWindow == null) {
                     mWindow = new CallRingFloatWindow(context);
-                }
+//                }
                 mWindow.setMsg("you a new Call");
                 mWindow.showWindow();
             }
@@ -47,11 +47,13 @@ public class PhoneStateReceiver extends BroadcastReceiver {
         @Override
         public void onCallStateChanged(int state, String incomingNumber) {
             Log.d("chenr", "call state: " + state);
-//            if (TelephonyManager.CALL_STATE_RINGING == state) {
+            if (TelephonyManager.CALL_STATE_OFFHOOK == state) {
                 mWindow = new CallRingFloatWindow(mContext);
                 mWindow.setMsg("you have a new Call");
+                Log.d("chenr", "start show float");
                 mWindow.showWindow();
-//            }
+                Log.d("chenr", "end show float");
+            }
 
             /*if (lastState == TelephonyManager.CALL_STATE_RINGING && state == TelephonyManager.CALL_STATE_IDLE && mWindow != null) {
                 mWindow.dismissWindow();

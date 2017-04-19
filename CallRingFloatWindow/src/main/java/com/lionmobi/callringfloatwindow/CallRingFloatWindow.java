@@ -7,6 +7,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -89,14 +90,11 @@ public class CallRingFloatWindow extends LinearLayout {
             layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE; // 2002
         }
 
-        KeyguardManager mKeyguardManager = (KeyguardManager) mContext.getSystemService(Context.KEYGUARD_SERVICE);
-        //if (mKeyguardManager.inKeyguardRestrictedInputMode()) {
-            if (Build.VERSION.SDK_INT < 23) {
-                layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
-            } else if (Settings.canDrawOverlays(mAppEx)) {
-                layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
-            }
-//        }
+        if (Build.VERSION.SDK_INT < 23) {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+        } else if (Settings.canDrawOverlays(mAppEx)) {
+            layoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+        }
 
         layoutParams.gravity = Gravity.LEFT | Gravity.TOP;
         layoutParams.y = screenHeight / 2 - viewHeight / 2;
@@ -118,13 +116,13 @@ public class CallRingFloatWindow extends LinearLayout {
 
     public void showWindow () {
         if (!isAddView) {
-            postDelayed(new Runnable() {
-                @Override
-                public void run() {
+//            postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
                     isAddView = true;
                     mWindowManager.addView(root, mParams);
-                }
-            }, 1000);
+//                }
+//            }, 1000);
         }
     }
 
