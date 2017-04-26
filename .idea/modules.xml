@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CallLogCursorTest/CallLogCursorTest.iml" filepath="$PROJECT_DIR$/CallLogCursorTest/CallLogCursorTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/CallRingFloatWindow/CallRingFloatWindow.iml" filepath="$PROJECT_DIR$/CallRingFloatWindow/CallRingFloatWindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/CanvasElevation/CanvasElevation.iml" filepath="$PROJECT_DIR$/CanvasElevation/CanvasElevation.iml" />
       <module fileurl="file://$PROJECT_DIR$/CustomButton/CustomButton.iml" filepath="$PROJECT_DIR$/CustomButton/CustomButton.iml" />
