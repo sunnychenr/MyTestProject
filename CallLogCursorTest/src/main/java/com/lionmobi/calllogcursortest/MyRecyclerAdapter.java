@@ -42,7 +42,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Cu
 
     @Override
     public void onBindViewHolder(CursorView holder, int position) {
-        holder.itemView.setTag(position);
+        holder.itemView.setTag(holder.getLayoutPosition());
 
         Cursor cur = getItem(position);
 
@@ -52,6 +52,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Cu
         name = TextUtils.isEmpty(name) ? num : name;
         holder.tv_name.setText(name);
         holder.tv_num.setText(num);
+        holder.tv_position.setText(holder.getLayoutPosition() + "");
     }
 
     public void setItemClickListener (View.OnClickListener listener) {
@@ -74,17 +75,17 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Cu
         return 0;
     }
 
-
-
     class CursorView extends RecyclerView.ViewHolder {
 
-        private TextView tv_name;
         private TextView tv_num;
+        private TextView tv_name;
+        private TextView tv_position;
 
         public CursorView(View itemView) {
             super(itemView);
             tv_name = (TextView) itemView.findViewById(R.id.tv_name);
             tv_num = (TextView) itemView.findViewById(R.id.tv_num);
+            tv_position = (TextView) itemView.findViewById(R.id.tv_position);
         }
     }
 }

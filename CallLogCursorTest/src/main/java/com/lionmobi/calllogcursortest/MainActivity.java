@@ -14,6 +14,9 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.LayoutAnimationController;
+import android.view.animation.TranslateAnimation;
+import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,8 +47,23 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-    }
 
+
+        TranslateAnimation anim = new TranslateAnimation(720.0f, 0.0f, 0.0f, 0.0f);
+        anim.setDuration(200);
+        lv.setLayoutAnimation(new LayoutAnimationController(anim));
+        lv.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+            }
+        });
+    }
 
     @OnClick(R.id.btn)
     public void onViewClicked() {
@@ -69,10 +87,10 @@ public class MainActivity extends Activity {
         int count = mCallLog.getCount();
         tv.setText("  start: " + start + ",  end: " + end + ",  during: " + during + ",  count: " + count);
 
-        //mAdapter = new MyCursorAdapter(this, R.layout.layout_lv_item, mCallLog, false);
-        //lv.setAdapter(mAdapter);
+        mAdapter = new MyCursorAdapter(this, R.layout.layout_lv_item, mCallLog, true);
+        lv.setAdapter(mAdapter);
 
-        adapter = new MyRecyclerAdapter(mCallLog, this);
+        /*adapter = new MyRecyclerAdapter(mCallLog, this);
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rv.setAdapter(adapter);
         rv.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -82,7 +100,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Log.d("chenr", "view.position: " + v.getTag());
             }
-        });
+        });*/
     }
 
     @Override

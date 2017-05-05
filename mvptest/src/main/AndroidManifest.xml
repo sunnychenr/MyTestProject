@@ -16,10 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.SecendActivity"/>
 
         <receiver android:name=".receiver.AlarmReceiver">
             <intent-filter>
-                <action android:name="com.android.intent.action.AlarmReceiver"/>
+                <action android:name="com.android.intent.action.AlarmReceiver" />
             </intent-filter>
         </receiver>
     </application>

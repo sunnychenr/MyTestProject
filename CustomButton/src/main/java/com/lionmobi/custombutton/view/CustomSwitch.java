@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.CompoundButton;
 
@@ -16,7 +17,7 @@ import com.lionmobi.custombutton.utils.Utils;
  * Created by ChenR on 2017/3/30.
  */
 
-public class CustomSwitch extends CompoundButton{
+public class CustomSwitch extends CompoundButton {
 
     private int mWidth, mHeight;
     private int mMinWidth, mMinHeight;
@@ -50,11 +51,11 @@ public class CustomSwitch extends CompoundButton{
 
     private Bitmap bitmap;
     private void initBitmap() {
-        int o = mMinHeight/2;
+        int o = mMinHeight / 2;
         bitmap = Bitmap.createBitmap(mMinHeight, mMinHeight, Bitmap.Config.ARGB_4444);
         Canvas mCanvas = new Canvas(bitmap);
         mPaint2.setColor(0xffffffff);
-        mCanvas.drawCircle(o, o, o-3, mPaint2);
+        mCanvas.drawCircle(o, o, o-4, mPaint2);   // drawCircle(float cx, float cy, float radius, @NonNull Paint paint)
     }
 
     @Override
@@ -69,39 +70,69 @@ public class CustomSwitch extends CompoundButton{
         if (mHeight <= 0) {
             mHeight = getBottom() - getTop();
         }
-        Utils.logD("onMeasure");
-        Utils.logD("mWidth: " + mWidth + ",  mHeight: " + mHeight);
     }
+
+    private float l = 0;
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Utils.logD("onDraw");
         int left = 0, top = 0, right = mMinWidth, bottom = mMinHeight;
-        int roundPx = mMinHeight/2;
+        int roundPx = mMinHeight / 2;
         mPaint1.setColor(0x44888888);
         canvas.drawRoundRect(new RectF(left, top, right, bottom), roundPx, roundPx, mPaint1);
-        canvas.drawBitmap(bitmap, 0, 0, mPaint2);
-        /*canvas.drawCircle(roundPx, roundPx, roundPx-4, mPaint2);
-        canvas.restore();*/
+        canvas.save();
+        mPaint1.setColor(0xffffffff);
+        canvas.drawBitmap(bitmap, l, 0, mPaint1);
     }
 
     private float downX;
+    private float downL;
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 downX = event.getX();
+                downL = l;
                 break;
             case MotionEvent.ACTION_MOVE:
                 float dist = event.getX() - downX;
-                if (Math.abs(dist) >= 0 && Math.abs(dist) <= (mMinWidth - mMinHeight)) {
+                int maxDist = mMinWidth - mMinHeight;
 
+                if (downL == maxDist) {
+                    if (dist < 0) {
+                        if (dist > -maxDist) {
+                            l = dist + maxDist;
+                        } else {
+                            l = 0;
+                        }
+                    } else {
+                        l = maxDist;
+                    }
+                } else if (downL == 0) {
+                    if (dist > 0) {
+                        if (dist < maxDist) {
+                            l = dist;
+                        } else {
+                            l = maxDist;
+                        }
+                    } else {
+                        l = 0;
+                    }
                 }
-
+                Utils.logD("dist: " + dist);
+                Utils.logD("l: " + l);
+                invalidate();
                 break;
             case MotionEvent.ACTION_UP:
+                int i = mMinWidth - mMinHeight;
+                if (l < i/2) {
+                    l = 0;
+                } else {
+                    l = i;
+                }
+                invalidate();
                 break;
         }
 
