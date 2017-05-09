@@ -1,4 +1,4 @@
-package com.lionmobi.mvptest.mode_interface;
+package com.lionmobi.mvptest.mvp_interface;
 
 /**
  * Created by ChenR on 2017/4/5.
@@ -7,5 +7,5 @@ package com.lionmobi.mvptest.mode_interface;
  */
 
 public interface IView {
-    public void setElemetsData(String content);
+    public void setElementsData(String content);
 }

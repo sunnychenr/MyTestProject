@@ -5,9 +5,9 @@ import android.os.Handler;
 import android.os.Message;
 
 import com.lionmobi.mvptest.R;
-import com.lionmobi.mvptest.mode_interface.IModel;
-import com.lionmobi.mvptest.mode_interface.IPresenter;
-import com.lionmobi.mvptest.mode_interface.IView;
+import com.lionmobi.mvptest.mvp_interface.IModel;
+import com.lionmobi.mvptest.mvp_interface.IPresenter;
+import com.lionmobi.mvptest.mvp_interface.IView;
 import com.lionmobi.mvptest.model.ModelImpl;
 import com.lionmobi.mvptest.utils.MessageNotifyUtil;
 
@@ -62,7 +62,7 @@ public class PresenterImpl implements IPresenter{
                         mIModel.getData(new IModel.ICallBack() {
                             @Override
                             public void onCall(String data) {
-                                mIView.setElemetsData(data);
+                                mIView.setElementsData(data);
 
                                 Message msg = mHandler.obtainMessage(1);
                                 msg.obj = data + ", handler send msg";

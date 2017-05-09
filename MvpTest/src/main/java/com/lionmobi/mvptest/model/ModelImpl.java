@@ -1,6 +1,6 @@
 package com.lionmobi.mvptest.model;
 
-import com.lionmobi.mvptest.mode_interface.IModel;
+import com.lionmobi.mvptest.mvp_interface.IModel;
 
 /**
  * Created by ChenR on 2017/4/5.

@@ -9,8 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.lionmobi.mvptest.R;
-import com.lionmobi.mvptest.mode_interface.IPresenter;
-import com.lionmobi.mvptest.mode_interface.IView;
+import com.lionmobi.mvptest.mvp_interface.IPresenter;
+import com.lionmobi.mvptest.mvp_interface.IView;
 import com.lionmobi.mvptest.presenter.PresenterImpl;
 
 /**
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements IView {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         initView();
         initListener();
@@ -86,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements IView {
     }
 
     @Override
-    public void setElemetsData(final String content) {
+    public void setElementsData(final String content) {
         tv_1.post(new Runnable() {
             @Override
             public void run() {

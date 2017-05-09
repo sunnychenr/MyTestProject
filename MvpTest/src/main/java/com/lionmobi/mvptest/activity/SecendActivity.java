@@ -10,11 +10,8 @@ import android.widget.TextView;
 
 import com.lionmobi.mvptest.R;
 import com.lionmobi.mvptest.activity.base.BaseActivity;
-import com.lionmobi.mvptest.mode_interface.IPresenter;
+import com.lionmobi.mvptest.mvp_interface.IPresenter;
 import com.lionmobi.mvptest.presenter.PresenterImpl;
-
-import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by ChenR on 2017/5/5.
@@ -55,7 +52,7 @@ public class SecendActivity extends BaseActivity {
     }
 
     @Override
-    public void setElemetsData(String content) {
+    public void setElementsData(String content) {
 
     }
 }

@@ -1,4 +1,4 @@
-package com.lionmobi.mvptest.mode_interface;
+package com.lionmobi.mvptest.mvp_interface;
 
 /**
  * Created by ChenR on 2017/4/5.

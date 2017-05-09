@@ -1,6 +1,4 @@
-package com.lionmobi.mvptest.mode_interface;
-
-import android.view.View;
+package com.lionmobi.mvptest.mvp_interface;
 
 /**
  * Created by ChenR on 2017/1/25.

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.Window;
 
-import com.lionmobi.mvptest.mode_interface.IView;
+import com.lionmobi.mvptest.mvp_interface.IView;
 
 import butterknife.ButterKnife;
 
